@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>വിവാഹപൂർവ്വ കൗൺസിലിംഗ് മാസ്റ്റർക്ലാസ്സ് | Pre-Marital Masterclass</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --coral: #E05A47;
+  --violet: #7B3EBF;
+  --mint: #22C55E;
+  --marigold: #EAB308;
+  --bg-dark: #0B0C0E;
+  --bg-card: #121316;
+  --bg-input: #18191D;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --text-main: #FFFFFF;
+  --text-sub: #ECEFF4;
+  --text-muted: #9CA3AF;
+  --font-title: 'Outfit', 'Anek Malayalam', 'Nirmala UI', sans-serif;
+  --font-body: 'Inter', 'Anek Malayalam', 'Nirmala UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header & Flow Tracker (Minimalist) */
+header {
+  width: 100%;
+  padding: 24px 40px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-dark);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.logo-text {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: var(--text-main);
+}
+
+.flow-tracker {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.flow-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+.flow-step.active {
+  color: var(--text-main);
+}
+
+.flow-step.active .flow-step-num {
+  border-color: var(--coral);
+  background: var(--coral);
+  color: var(--bg-dark);
+}
+
+.flow-step.completed {
+  color: var(--mint);
+}
+
+.flow-step.completed .flow-step-num {
+  border-color: var(--mint);
+  background: var(--mint);
+  color: var(--bg-dark);
+}
+
+.flow-line {
+  height: 1px;
+  width: 30px;
+  background: var(--border-color);
+  transition: background 0.3s;
+}
+
+.flow-line.completed {
+  background: var(--mint);
+}
+
+/* Slide Deck Container */
+.deck-container {
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  position: relative;
+  z-index: 5;
+  left: auto;
+  right: auto;
+}
+
+.slide.previous {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+/* Slide Layout Options */
+.slide-grid-2 {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .slide-grid-2 {
+    grid-template-columns: 1fr;
+    padding-bottom: 20px;
+  }
+  body {
+    overflow: auto;
+    height: auto;
+  }
+  .deck-container {
+    padding: 20px;
+  }
+}
+
+/* Card Styling (Minimalist Flat) */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Image styling */
+.slide-image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  height: 400px;
+  width: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(10%) contrast(105%);
+}
+
+/* Typography */
+h1 {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+h2 {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+h3 {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.subtitle-eng {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.sub-english {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-style: normal;
+  display: block;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--text-sub);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+/* Accents & Badges */
+.accent-txt-coral { color: var(--coral); }
+.accent-txt-violet { color: #A855F7; }
+.accent-txt-mint { color: var(--mint); }
+.accent-txt-marigold { color: var(--marigold); }
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.badge-coral {
+  background: rgba(224, 90, 71, 0.1);
+  color: var(--coral);
+  border: 1px solid rgba(224, 90, 71, 0.2);
+}
+
+.badge-violet {
+  background: rgba(123, 62, 191, 0.1);
+  color: #A855F7;
+  border: 1px solid rgba(123, 62, 191, 0.2);
+}
+
+.badge-mint {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--mint);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.badge-marigold {
+  background: rgba(234, 179, 8, 0.1);
+  color: var(--marigold);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+/* Feature Grid / Cards */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 15px;
+  background: #18191D;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: background 0.3s;
+}
+
+.feature-item:hover {
+  background: #202127;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.feature-content {
+  flex-grow: 1;
+}
+
+.feature-content h4 {
+  font-size: 1rem;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+/* Interactive elements: Love Languages / Statements */
+.love-languages-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .love-languages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.love-card {
+  background: #18191D;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.love-card:hover {
+  border-color: var(--text-sub);
+}
+
+.love-card.active-card {
+  background: #202127;
+  border-color: var(--text-main);
+}
+
+/* Dynamic Interactive "I Statements" comparison */
+.comparison-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.comparison-box {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  background: rgba(224, 90, 71, 0.05);
+  border: 1px solid rgba(224, 90, 71, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comparison-box.better {
+  background: rgba(34, 197, 94, 0.05);
+  border-color: rgba(34, 197, 94, 0.15);
+}
+
+.comp-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+.comparison-box:not(.better) .comp-tag {
+  background: var(--coral);
+}
+
+.comparison-box.better .comp-tag {
+  background: var(--mint);
+  color: var(--bg-dark);
+}
+
+.comp-content {
+  padding: 12px 16px;
+}
+
+.comp-content p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Math Presentation Slide (Minimalist) */
+.math-container {
+  background: #18191D;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.equation-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+}
+
+.legend-item {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
+
+/* Custom CSS Equation Layout */
+.marriage-equation-css {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  width: 100%;
+  padding: 10px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.marriage-equation-css::-webkit-scrollbar {
+  display: none;
+}
+
+.eq-fraction {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+}
+
+.eq-numerator {
+  border-bottom: 1.5px solid var(--text-sub);
+  padding: 0 8px 6px 8px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.eq-denominator {
+  padding: 6px 8px 0 8px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.eq-term {
+  font-weight: 600;
+}
+
+.eq-success {
+  font-size: 1.3rem;
+  color: var(--text-main);
+}
+
+.eq-comm {
+  color: var(--mint);
+}
+
+.eq-trust {
+  color: #A855F7;
+}
+
+.eq-ego {
+  color: var(--coral);
+}
+
+.eq-values {
+  color: var(--marigold);
+  white-space: nowrap;
+}
+
+.eq-operator {
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--text-sub);
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .marriage-equation-css {
+    font-size: 0.95rem;
+    gap: 6px;
+  }
+  .eq-success {
+    font-size: 1.1rem;
+  }
+  .glass-card {
+    padding: 16px;
+  }
+  .slide {
+    left: 10px;
+    right: 10px;
+  }
+  .deck-container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .deck-container {
+    padding: 0 20px;
+  }
+  .glass-card {
+    padding: 24px;
+  }
+  .slide {
+    left: 20px;
+    right: 20px;
+    gap: 20px;
+  }
+  .slide-image-wrapper {
+    height: 320px;
+  }
+}
+
+/* Custom Interactive Donut Chart (Minimalist) */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.donut-svg-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.donut-svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.donut-segment {
+  fill: none;
+  stroke-width: 12;
+  transition: stroke-dashoffset 1s ease-in-out, stroke-width 0.3s;
+  cursor: pointer;
+}
+
+.donut-segment:hover {
+  stroke-width: 15;
+}
+
+.donut-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.donut-center-num {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FFF;
+  display: block;
+}
+
+.donut-center-lbl {
+  font-size: 0.7rem;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.chart-legend {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #18191D;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.chart-legend-item:hover, .chart-legend-item.highlighted {
+  border-color: var(--text-sub);
+  background: #202127;
+}
+
+.chart-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Weekly Checklist Table */
+.checklist-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #18191D;
+  margin-top: 15px;
+}
+
+.checklist-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.checklist-table th {
+  background: rgba(255,255,255,0.02);
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-title);
+  color: var(--text-main);
+}
+
+.checklist-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+}
+
+.checklist-table tr:last-child td {
+  border-bottom: none;
+}
+
+.checklist-table tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+  color: var(--text-main);
+}
+
+.checkbox-col {
+  width: 40px;
+  text-align: center;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--text-sub);
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.custom-checkbox.checked {
+  background: var(--mint);
+  border-color: var(--mint);
+}
+
+.custom-checkbox.checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--bg-dark);
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+/* Footer / Navigation Controls (Minimalist) */
+footer {
+  width: 100%;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-dark);
+  z-index: 10;
+}
+
+.help-tips {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+}
+
+.keyboard-key {
+  background: #18191D;
+  border: 1px solid var(--border-color);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: #18191D;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #202127;
+  border-color: var(--text-sub);
+}
+
+.nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.slide-number {
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+}
+
+/* Home cover specific styles */
+.cover-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.cover-title {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  line-height: 1.25;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .cover-title {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.start-btn {
+  background: var(--text-main);
+  color: var(--bg-dark);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 15px;
+}
+
+.start-btn:hover {
+  background: var(--text-sub);
+  transform: translateY(-1px);
+}
+
+</style>
+</head>
+<body>
+
+
+
+  <!-- Slide Deck Container -->
+  <main class="deck-container">
+
+    <!-- SLIDE 1: Cover Slide (Hour 0) -->
+    <section class="slide active" id="slide-1" data-hour="0">
+      <div class="glass-card cover-layout">
+        <span class="badge badge-coral">Masterclass for Young Couples</span>
+        <h1 class="cover-title">നവ ദമ്പതികൾക്കായുള്ള<br>വിവാഹപൂർവ്വ മാസ്റ്റർക്ലാസ്സ്</h1>
+        <p style="max-width: 700px; font-size: 1.2rem;">
+          പരസ്പരം മനസ്സിലാക്കി, സ്നേഹത്തോടെയും ആത്മവിശ്വാസത്തോടെയും ഒരു പുതിയ ജീവിതത്തിലേക്ക് പ്രവേശിക്കാൻ യുവതലമുറയെ സഹായിക്കുന്ന പ്രായോഗിക ഗൈഡ്.
+          <span class="sub-english">A practical guide helping the younger generation step into marriage with understanding, love, and confidence.</span>
+        </p>
+        <button class="start-btn" id="start-btn">കോഴ്സ് ആരംഭിക്കാം (Start Course) &rarr;</button>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Course Agenda (Hour 0) -->
+    <section class="slide" id="slide-2" data-hour="0">
+      <div class="glass-card" style="width: 100%;">
+        <span class="badge badge-coral">Course Agenda</span>
+        <h2>4-മണിക്കൂർ ക്ലാസ്സ് ഘടന</h2>
+        <span class="subtitle-eng">4-Hour Masterclass Roadmap</span>
+        <p style="margin-bottom: 25px;">ദാമ്പത്യവിജയത്തിനായുള്ള പ്രധാനപ്പെട്ട അധ്യായങ്ങൾ ഞങ്ങൾ താഴെ പറയുന്ന രീതിയിൽ ക്രമീകരിച്ചിരിക്കുന്നു.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+          <div class="feature-item" style="border-top: 4px solid var(--coral); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--coral);">Hour 1: മനസ്സിലാക്കൽ</div>
+            <p style="font-size: 0.9rem; margin: 0; color: var(--text-sub);">
+              ആശയവിനിമയം, സ്നേഹഭാഷകൾ, ഞാൻ പ്രസ്താവനകൾ, ശ്രദ്ധയോടെയുള്ള കേൾവി.
+              <span class="sub-english">Communication, Love Languages, active listening.</span>
+            </p>
+          </div>
+          
+          <div class="feature-item" style="border-top: 4px solid var(--violet); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--violet);">Hour 2: പൊരുത്തപ്പെടൽ</div>
+            <p style="font-size: 0.9rem; margin: 0; color: var(--text-sub);">
+              വ്യത്യാസങ്ങൾ പൊരുത്തപ്പെടുത്തൽ, കുടുംബ അതിരുകൾ, തർക്കപരിഹാരം, അടുപ്പം.
+              <span class="sub-english">Adjusting differences, boundaries, intimacy.</span>
+            </p>
+          </div>
+          
+          <div class="feature-item" style="border-top: 4px solid var(--marigold); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--marigold);">Hour 3: സാമ്പത്തികം</div>
+            <p style="font-size: 0.9rem; margin: 0; color: var(--text-sub);">
+              സാമ്പത്തിക സുതാര്യത, കടബാധ്യതകൾ, ബജറ്റിംഗ്, ഭാവി സമ്പാദ്യം.
+              <span class="sub-english">Financial transparency, budgeting, future savings.</span>
+            </p>
+          </div>
+          
+          <div class="feature-item" style="border-top: 4px solid var(--mint); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--mint);">Hour 4: പ്രയാണം</div>
+            <p style="font-size: 0.9rem; margin: 0; color: var(--text-sub);">
+              ഒരുമിച്ച് വളരുക, ദാമ്പത്യ സമവാക്യം, വിജയഘടകങ്ങൾ, പ്രതിവാര ചെക്ക്ലിസ്റ്റ്.
+              <span class="sub-english">Growing together, success pillars, checklists.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Hour 1 Intro: മനസ്സിലാക്കൽ (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-3" data-hour="1">
+      <div class="glass-card">
+        <span class="badge badge-coral">Hour 1: മനസ്സിലാക്കൽ</span>
+        <h2>പരസ്പരം അറിയുക, അടിത്തറയിടുക</h2>
+        <span class="subtitle-eng">Knowing Each Other & Building Foundations</span>
+        <p>
+          ദാമ്പത്യത്തിന്റെ ഏറ്റവും പ്രധാനപ്പെട്ട അടിത്തറയാണ് പരസ്പരമുള്ള മനസ്സിലാക്കൽ. പങ്കാളിയുടെ ചിന്തകളെയും സ്വഭാവങ്ങളെയും മുൻവിധികളില്ലാതെ ഉൾക്കൊള്ളാൻ നമ്മൾ പഠിക്കേണ്ടതുണ്ട്.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(255, 111, 97, 0.15); color: var(--coral);">❤</div>
+            <div class="feature-content">
+              <h4>ആത്മാർത്ഥമായ താല്പര്യം (Genuine Interest)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">പങ്കാളിയുടെ സ്വപ്നങ്ങൾക്കും താല്പര്യങ്ങൾക്കും മുൻഗണന നൽകുക. <span class="sub-english">Give priority to your partner's dreams and interests.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(0, 245, 212, 0.15); color: var(--mint);">🗣</div>
+            <div class="feature-content">
+              <h4>തുറന്ന ആശയവിനിമയം (Open Communication)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">ഭയമില്ലാതെ വികാരങ്ങൾ പങ്കുവെക്കാനുള്ള ഇടം നൽകുക. <span class="sub-english">Create a safe space to share emotions without fear.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-image-wrapper">
+        <img src="images/couple_love.png" alt="Happy Young Indian Couple" class="slide-image">
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Love Languages (സ്നേഹഭാഷകൾ) (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-4" data-hour="1">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div>
+          <span class="badge badge-coral">Hour 1: മനസ്സിലാക്കൽ</span>
+          <h2>5 സ്നേഹഭാഷകൾ</h2>
+          <span class="subtitle-eng">The 5 Love Languages</span>
+          <p style="margin-bottom: 15px;">
+            ഓരോരുത്തരും സ്നേഹം പ്രകടിപ്പിക്കുന്നതും സ്വീകരിക്കുന്നതും വ്യത്യസ്ത രീതികളിലാണ്. നിങ്ങളുടെ പങ്കാളിയുടെ സ്നേഹഭാഷ തിരിച്ചറിയുക.
+          </p>
+          
+          <div class="love-languages-grid">
+            <div class="love-card active-card" data-title="അഭിനന്ദന വാക്കുകൾ (Words of Affirmation)" data-mal="പങ്കാളിയെ അഭിനന്ദിക്കുകയും പ്രോത്സാഹിപ്പിക്കുകയും ചെയ്യുന്ന വാക്കുകൾ സംസാരിക്കുക. ഉദാഹരണത്തിന്, 'നീ അതീവ സുന്ദരിയായിട്ടുണ്ട്' അല്ലെങ്കിൽ 'എനിക്ക് നിന്നിൽ അഭിമാനമുണ്ട്'." data-eng="Verbally complimenting and encouraging your partner. For example, 'You look beautiful' or 'I am proud of you'.">
+              <h3 class="accent-txt-coral">1. വാക്കുകൾ</h3>
+              <small>Words of Affirmation</small>
+            </div>
+            
+            <div class="love-card" data-title="ഗുണനിലവാരമുള്ള സമയം (Quality Time)" data-mal="ഫ്ലോൺ കോളുകളും മറ്റ് തടസ്സങ്ങളുമില്ലാതെ പങ്കാളിക്ക് പൂർണ്ണ ശ്രദ്ധ നൽകി ഒരുമിച്ചിരിക്കുക. ഉദാഹരണത്തിന്, ഒരുമിച്ചുള്ള വൈകുന്നേരത്തെ നടത്തം അല്ലെങ്കിൽ കോഫി ഡേറ്റ്." data-eng="Giving undivided attention to your partner without phone calls or distractions. For example, evening walks or coffee dates.">
+              <h3 class="accent-txt-violet">2. സമയം നൽകൽ</h3>
+              <small>Quality Time</small>
+            </div>
+            
+            <div class="love-card" data-title="സമ്മാനങ്ങൾ നൽകൽ (Receiving Gifts)" data-mal="വിലയേറിയതല്ലെങ്കിലും സ്നേഹത്തിന്റെ പ്രതീകമായി നൽകുന്ന ചെറിയ സമ്മാനങ്ങൾ. അത് പങ്കാളിയെ ഓർക്കുന്നുണ്ട് എന്നതിന്റെ തെളിവാണ്." data-eng="Giving thoughtful gifts, not necessarily expensive, as a token of love. Shows that you were thinking of them.">
+              <h3 class="accent-txt-marigold">3. സമ്മാനങ്ങൾ</h3>
+              <small>Receiving Gifts</small>
+            </div>
+            
+            <div class="love-card" data-title="സഹായങ്ങൾ ചെയ്യുക (Acts of Service)" data-mal="പങ്കാളിയുടെ ഉത്തരവാദിത്തങ്ങൾ കുറയ്ക്കാൻ സഹായിക്കുന്ന പ്രവർത്തനങ്ങൾ ചെയ്യുക. ഉദാഹരണത്തിന്, വീട്ടുജോലികളിൽ സഹായിക്കുക അല്ലെങ്കിൽ ഭക്ഷണം പാകം ചെയ്യുക." data-eng="Doing tasks to ease your partner's load. For example, helping with household chores or cooking together.">
+              <h3 class="accent-txt-mint">4. സഹായങ്ങൾ</h3>
+              <small>Acts of Service</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interactive details box on the right -->
+      <div class="glass-card" id="love-desc-box" style="display: flex; flex-direction: column; justify-content: center; height: 100%; border-color: rgba(138, 43, 226, 0.2);">
+        <span class="badge badge-violet" style="align-self: flex-start;">വിശദാംശങ്ങൾ (Details)</span>
+        <h3 id="love-detail-title" class="accent-txt-violet" style="font-size: 1.6rem; margin-bottom: 15px;">അഭിനന്ദന വാക്കുകൾ (Words of Affirmation)</h3>
+        <p id="love-detail-mal" style="font-size: 1.1rem; line-height: 1.7; color: #FFF;">
+          പങ്കാളിയെ അഭിനന്ദിക്കുകയും പ്രോത്സാഹിപ്പിക്കുകയും ചെയ്യുന്ന വാക്കുകൾ സംസാരിക്കുക. ഉദാഹരണത്തിന്, 'നീ അതീവ സുന്ദരിയായിട്ടുണ്ട്' അല്ലെങ്കിൽ 'എനിക്ക് നിന്നിൽ അഭിമാനമുണ്ട്'.
+        </p>
+        <p id="love-detail-eng" class="sub-english" style="font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+          Verbally complimenting and encouraging your partner. For example, 'You look beautiful' or 'I am proud of you'.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: "I" Statements (ഞാൻ പ്രസ്താവനകൾ) (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-5" data-hour="1">
+      <div class="glass-card">
+        <span class="badge badge-coral">Hour 1: മനസ്സിലാക്കൽ</span>
+        <h2>സംഭാഷണങ്ങളിലെ 'ഞാൻ' പ്രസ്താവനകൾ</h2>
+        <span class="subtitle-eng">Using 'I' Statements for Constructive Communication</span>
+        <p>
+          തർക്കങ്ങൾ ഉണ്ടാകുമ്പോൾ പങ്കാളിയെ കുറ്റപ്പെടുത്തുന്ന രീതി ഒഴിവാക്കി നമ്മുടെ വികാരങ്ങൾ പ്രകടിപ്പിക്കാൻ 'ഞാൻ' പ്രസ്താവനകൾ സഹായിക്കും. ഇത് പരസ്പര ബഹുമാനം നിലനിർത്തുന്നു.
+        </p>
+        <div class="feature-list" style="margin-top: 20px;">
+          <div class="feature-item" style="border-left: 4px solid var(--coral);">
+            <div class="feature-content">
+              <h4 class="accent-txt-coral">കുറ്റപ്പെടുത്തൽ ഒഴിവാക്കുക (Avoid Blame)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">'നീ' എന്ന് തുടങ്ങുന്ന വാചകങ്ങൾ പലപ്പോഴും കുറ്റപ്പെടുത്തലായി മാറുകയും പങ്കാളി സ്വയം പ്രതിരോധത്തിലാവുകയും ചെയ്യുന്നു. <span class="sub-english">'You' statements put partners on the defensive.</span></p>
+            </div>
+          </div>
+          <div class="feature-item" style="border-left: 4px solid var(--mint);">
+            <div class="feature-content">
+              <h4 class="accent-txt-mint">വികാരം വ്യക്തമാക്കുക (State Your Feelings)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">നമ്മുടെ ഉള്ളിലെ വിഷമങ്ങളും ആവശ്യങ്ങളും തുറന്നു പറയുന്നതിലൂടെ പങ്കാളിയിൽ അനുകമ്പയുണ്ടാക്കുന്നു. <span class="sub-english">Sharing vulnerability evokes empathy.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+        <h3 class="accent-txt-marigold">പ്രായോഗിക മാറ്റം (Practical Example):</h3>
+        <div class="comparison-container">
+          <div class="comparison-box">
+            <div class="comp-tag">തെറ്റ് (Wrong)</div>
+            <div class="comp-content">
+              <p><strong>"നീ എപ്പോഴും ഫ്രണ്ട്സിന്റെ കൂടെയാണ്, എന്നെ തിരിഞ്ഞു നോക്കാറില്ല!"</strong></p>
+              <span class="sub-english">"You are always with your friends, you ignore me!"</span>
+            </div>
+          </div>
+          
+          <div class="comparison-box better">
+            <div class="comp-tag">ശരി (Right)</div>
+            <div class="comp-content">
+              <p><strong>"നമുക്ക് ഒരുമിച്ച് സമയം ചിലവഴിക്കാൻ കിട്ടാത്തപ്പോൾ എനിക്ക് സങ്കടം തോന്നാറുണ്ട്."</strong></p>
+              <span class="sub-english">"I feel sad when we don't get quality time together."</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Active Listening (ശ്രദ്ധയോടെയുള്ള കേൾവി) (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-6" data-hour="1">
+      <div class="glass-card">
+        <span class="badge badge-coral">Hour 1: മനസ്സിലാക്കൽ</span>
+        <h2>ശ്രദ്ധയോടെയുള്ള കേൾവി</h2>
+        <span class="subtitle-eng">The Art of Active Listening</span>
+        <p>
+          സംസാരിക്കുന്നതിനേക്കാൾ പ്രധാനം പങ്കാളി പറയുന്നത് ശ്രദ്ധയോടെ കേൾക്കുക എന്നതാണ്. ഇത് തർക്കങ്ങളുടെ തോത് വലിയ രീതിയിൽ കുറയ്ക്കുന്നു.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(0, 245, 212, 0.12); color: var(--mint);">🤫</div>
+            <div class="feature-content">
+              <h4>തടസ്സപ്പെടുത്താതിരിക്കുക (Do not interrupt)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">പങ്കാളി പറഞ്ഞു തീർക്കുന്നതുവരെ നിങ്ങളുടെ ന്യായീകരണങ്ങൾ പറയാൻ ധൃതി കാണിക്കാതിരിക്കുക. <span class="sub-english">Listen fully before jumping to defend yourself.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(255, 111, 97, 0.12); color: var(--coral);">🤝</div>
+            <div class="feature-content">
+              <h4>വികാരം ഉൾക്കൊള്ളുക (Empathize)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">അവരുടെ വാക്കുകൾക്ക് പിന്നിലെ സങ്കടമോ ദേഷ്യമോ മനസ്സിലാക്കാൻ ശ്രമിക്കുക. <span class="sub-english">Understand the emotions behind their words.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; background: rgba(138, 43, 226, 0.03);">
+        <h3 class="accent-txt-violet">ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ (Rules to Follow):</h3>
+        <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
+          <li style="display: flex; gap: 10px; align-items: flex-start; color: var(--text-sub);">
+            <span style="color: var(--mint); font-weight: bold;">✔</span>
+            <div>
+              <strong>മൊബൈൽ ഫോൺ മാറ്റിവെക്കുക:</strong> സംസാരിക്കുമ്പോൾ ഫോണിലേക്ക് നോക്കാതിരിക്കുക.
+              <span class="sub-english">Put away your phone during key conversations.</span>
+            </div>
+          </li>
+          <li style="display: flex; gap: 10px; align-items: flex-start; color: var(--text-sub);">
+            <span style="color: var(--mint); font-weight: bold;">✔</span>
+            <div>
+              <strong>ഉറപ്പ് വരുത്തുക (Reflect & Clarify):</strong> "നീ ഉദ്ദേശിച്ചത് ഇതാണോ?" എന്ന് ചോദിച്ചു സംശയം തീർക്കുക.
+              <span class="sub-english">Ask "Do you mean this?" to avoid misunderstandings.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Hour 2 Intro: പൊരുത്തപ്പെടൽ (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-7" data-hour="2">
+      <div class="glass-card">
+        <span class="badge badge-violet">Hour 2: പൊരുത്തപ്പെടൽ</span>
+        <h2>വ്യത്യാസങ്ങളെ അംഗീകരിക്കുക</h2>
+        <span class="subtitle-eng">Embracing Differences & Finding Alignment</span>
+        <p>
+          രണ്ട് വ്യത്യസ്ത കുടുംബ സാഹചര്യങ്ങളിൽ നിന്നും സംസ്കാരങ്ങളിൽ നിന്നും വരുന്ന വ്യക്തികൾ ഒരുമിച്ചു ജീവിക്കുമ്പോൾ സ്വാഭാവികമായും അഭിപ്രായവ്യത്യാസങ്ങൾ ഉണ്ടാകും.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(255, 183, 3, 0.15); color: var(--marigold);">☯</div>
+            <div class="feature-content">
+              <h4>അഭിപ്രായവ്യത്യാസങ്ങൾ സ്വാഭാവികം</h4>
+              <p style="margin: 0; font-size: 0.95rem;">വ്യത്യസ്ത അഭിപ്രായങ്ങൾ ശത്രുതയല്ല, മറിച്ച് രണ്ടു കാഴ്ചപ്പാടുകൾ മാത്രമാണ്. <span class="sub-english">Differences are perspectives, not hostility.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(138, 43, 226, 0.15); color: #B270FF;">🤝</div>
+            <div class="feature-content">
+              <h4>പൊരുത്തപ്പെടൽ (Compromise)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">ആരാണ് ജയിക്കുന്നത് എന്നതിലല്ല, ബന്ധം എങ്ങനെ മികച്ചതാക്കാം എന്നതിലാണ് കാര്യം. <span class="sub-english">It's not about who wins, it's about winning together.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-image-wrapper" style="box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 245, 212, 0.2);">
+        <img src="images/couple_budget.png" alt="Couple Discussing and Planning" class="slide-image">
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Boundaries with In-laws (കുടുംബങ്ങളിലെ അതിർവരമ്പുകൾ) (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-8" data-hour="2">
+      <div class="glass-card">
+        <span class="badge badge-violet">Hour 2: പൊരുത്തപ്പെടൽ</span>
+        <h2>കുടുംബങ്ങളിലെ അതിർവരമ്പുകൾ</h2>
+        <span class="subtitle-eng">Healthy Boundaries with Families & In-laws</span>
+        <p>
+          മാതാപിതാക്കളെ ബഹുമാനിക്കുന്നതോടൊപ്പം തന്നെ സ്വന്തം ദാമ്പത്യത്തിന്റെ സ്വകാര്യതയും സ്വാതന്ത്ര്യവും സംരക്ഷിക്കാൻ ആരോഗ്യകരമായ അതിരുകൾ ആവശ്യമാണ്.
+        </p>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(0, 245, 212, 0.12); color: var(--mint);">🛡</div>
+            <div class="feature-content">
+              <h4>ദാമ്പത്യ സ്വകാര്യത (Marital Privacy)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">നിങ്ങളുടെ വ്യക്തിപരമായ പ്രശ്നങ്ങൾ മൂന്നാമതൊരാളുമായി (മാതാപിതാക്കളായാലും) ഉടനടി പങ്കുവെക്കാതിരിക്കുക. <span class="sub-english">Avoid immediate external involvement in personal disputes.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(255, 111, 97, 0.15); color: var(--coral);">🤝</div>
+            <div class="feature-content">
+              <h4>ഒരുമിച്ചുള്ള തീരുമാനങ്ങൾ (Joint Decisions)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">കുടുംബ കാര്യങ്ങളിൽ തീരുമാനമെടുക്കുന്നതിന് മുൻപ് ദമ്പതികൾ പരസ്പരം ചർച്ച ചെയ്യുക. <span class="sub-english">Consult each other before family commitments.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; background: rgba(138, 43, 226, 0.05);">
+        <h3 class="accent-txt-violet">ശ്രദ്ധിക്കേണ്ട പ്രധാന തത്വം (Golden Rule):</h3>
+        <p style="font-size: 1.15rem; line-height: 1.7; color: #FFF; font-style: italic; border-left: 3px solid var(--violet); padding-left: 20px; margin-top: 10px;">
+          "നിങ്ങളുടെ പങ്കാളിയെ മാതാപിതാക്കളുടെ മുന്നിൽ താഴ്ത്തിക്കെട്ടാതിരിക്കുക. മറ്റുള്ളവർ പങ്കാളിയെ ബഹുമാനിക്കുന്നത് നിങ്ങൾ അവരെ എങ്ങനെ കാണുന്നു എന്നതിനെ ആശ്രയിച്ചിരിക്കും."
+        </p>
+        <span class="sub-english" style="padding-left: 20px;">
+          "Never disparage your partner in front of your parents. Their respect for your partner mirrors how you value them."
+        </span>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Conflict Resolution Styles (തർക്കപരിഹാര ശൈലികൾ) (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-9" data-hour="2">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div>
+          <span class="badge badge-violet">Hour 2: പൊരുത്തപ്പെടൽ</span>
+          <h2>തർക്കപരിഹാര ശൈലികൾ</h2>
+          <span class="subtitle-eng">Conflict Resolution Styles</span>
+          <p style="margin-bottom: 15px;">
+            തർക്കങ്ങൾ ഉണ്ടാകുമ്പോൾ നിങ്ങൾ സാധാരണയായി സ്വീകരിക്കുന്ന ശൈലി ഏതാണ്? ഒരുമിച്ച് കണ്ടെത്തി തിരുത്താം.
+          </p>
+          
+          <!-- Interactive cards for conflict styles -->
+          <div class="love-languages-grid">
+            <div class="love-card active-card" data-conflict-card data-title="ഒഴിവാക്കൽ (Avoiding Style)" data-mal="പ്രശ്നങ്ങളെ അഭിമുഖീകരിക്കാതെ ഒളിച്ചോടുന്ന രീതി. ഇത് താൽക്കാലിക സമാധാനം നൽകുമെങ്കിലും ഉള്ളിൽ നീരസം വളർത്താൻ കാരണമാകും." data-eng="Ignoring or avoiding the conflict. Provides temporary peace but breeds long-term resentment.">
+              <h3 class="accent-txt-coral">1. ഒഴിവാക്കൽ</h3>
+              <small>Avoiding</small>
+            </div>
+            
+            <div class="love-card" data-conflict-card data-title="ആക്രമണോത്സുകത (Competing Style)" data-mal="താൻ പറയുന്നത് മാത്രം ശരിയെന്ന് വാദിക്കുകയും പങ്കാളിയെ തോൽപ്പിച്ച് ജയിക്കാൻ ശ്രമിക്കുകയും ചെയ്യുന്ന രീതി." data-eng="Focusing on winning the argument at all costs. Damages trust and hurts the partner's self-esteem.">
+              <h3 class="accent-txt-marigold">2. വാശി പിടിക്കൽ</h3>
+              <small>Competing</small>
+            </div>
+            
+            <div class="love-card" data-conflict-card data-title="പൊരുത്തപ്പെടൽ (Accommodating Style)" data-mal="സ്വന്തം ആവശ്യങ്ങൾ ബലികഴിച്ച് പങ്കാളിയുടെ താല്പര്യങ്ങൾക്ക് മാത്രം മുൻഗണന നൽകുന്നത്. ഭാവിയിൽ ഇത് നിരാശയിലേക്ക് നയിക്കാം." data-eng="Giving in to the partner's demands while ignoring your own needs. Can lead to self-neglect and frustration.">
+              <h3 class="accent-txt-violet">3. കീഴടങ്ങൽ</h3>
+              <small>Accommodating</small>
+            </div>
+            
+            <div class="love-card" data-conflict-card data-title="സഹകരണം (Collaborating Style)" data-mal="രണ്ടുപേർക്കും സ്വീകാര്യമായ ഒരു പൊതുവായ പരിഹാരം ചർച്ചകളിലൂടെ കണ്ടെത്തുന്നത്. ദാമ്പത്യത്തിൽ ഏറ്റവും അനുയോജ്യമായ രീതി ഇതാണ്." data-eng="Finding a mutually satisfying win-win solution through constructive talk. The healthiest style for marriage.">
+              <h3 class="accent-txt-mint">4. സഹകരണം</h3>
+              <small>Collaborating</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interactive details box for conflicts -->
+      <div class="glass-card" id="conflict-desc-box" style="display: flex; flex-direction: column; justify-content: center; height: 100%; border-color: rgba(0, 245, 212, 0.2);">
+        <span class="badge badge-mint" style="align-self: flex-start;">വിശകലനം (Analysis)</span>
+        <h3 id="conflict-detail-title" class="accent-txt-mint" style="font-size: 1.6rem; margin-bottom: 15px;">ഒഴിവാക്കൽ (Avoiding Style)</h3>
+        <p id="conflict-detail-mal" style="font-size: 1.1rem; line-height: 1.7; color: #FFF;">
+          പ്രശ്നങ്ങളെ അഭിമുഖീകരിക്കാതെ ഒളിച്ചോടുന്ന രീതി. ഇത് താൽക്കാലിക സമാധാനം നൽകുമെങ്കിലും ഉള്ളിൽ നീരസം വളർത്താൻ കാരണമാകും.
+        </p>
+        <p id="conflict-detail-eng" class="sub-english" style="font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+          Ignoring or avoiding the conflict. Provides temporary peace but breeds long-term resentment.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: Intimacy & Connection (ആത്മബന്ധവും അടുപ്പവും) (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-10" data-hour="2">
+      <div class="glass-card">
+        <span class="badge badge-violet">Hour 2: പൊരുത്തപ്പെടൽ</span>
+        <h2>ആത്മബന്ധവും അടുപ്പവും</h2>
+        <span class="subtitle-eng">Intimacy & Deep Connection</span>
+        <p>
+          അടുപ്പം എന്നത് കേവലം ശാരീരികം മാത്രമല്ല. ഒരു നല്ല ദാമ്പത്യത്തിൽ 4 തരം അടുപ്പങ്ങൾ ഒരുപോലെ പ്രധാനമാണ്.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-content">
+              <h4 class="accent-txt-coral">1. വൈകാരിക അടുപ്പം (Emotional Intimacy)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">മനസ്സിലുള്ള ഭയവും ആഗ്രഹങ്ങളും തുറന്നു പങ്കുവെക്കാനും പരസ്പരം പിന്തുണ നൽകാനുമുള്ള കഴിവ്. <span class="sub-english">Sharing fears, vulnerabilities, and support.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h4 class="accent-txt-mint">2. ബൗദ്ധിക അടുപ്പം (Intellectual Intimacy)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">ആശയങ്ങൾ, പുസ്തകങ്ങൾ, രാഷ്ട്രീയ വീക്ഷണങ്ങൾ, വ്യക്തിപരമായ മൂല്യങ്ങൾ എന്നിവയെക്കുറിച്ചുള്ള ചർച്ചകൾ. <span class="sub-english">Sharing thoughts, ideas, and values.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-content">
+              <h4 class="accent-txt-marigold">3. വിനോദങ്ങളിലെ അടുപ്പം (Recreational Intimacy)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">ഒരുമിച്ച് യാത്രകൾ ചെയ്യുക, കളികളിൽ ഏർപ്പെടുക, ഹോബികൾ പങ്കിടുക. ഒരുമിച്ച് ചിരിക്കാൻ പഠിക്കുക. <span class="sub-english">Sharing hobbies, travel, and laughter.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-content">
+              <h4 class="accent-txt-violet">4. ശാരീരിക അടുപ്പം (Physical Intimacy)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">പരസ്പരം തൊടൽ, കെട്ടിപ്പിടിക്കൽ, ചുംബനങ്ങൾ, ലൈംഗികത എന്നിവയിലൂടെയുള്ള സ്നേഹപ്രകടനങ്ങൾ. <span class="sub-english">Hugs, touches, and sexual connection.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: Hour 3 Intro: സാമ്പത്തിക ആസൂത്രണം (Hour 3) -->
+    <section class="slide slide-grid-2" id="slide-11" data-hour="3">
+      <div class="glass-card">
+        <span class="badge badge-marigold">Hour 3: സാമ്പത്തികം</span>
+        <h2>സാമ്പത്തിക സുതാര്യത</h2>
+        <span class="subtitle-eng">Financial Transparency & Joint Planning</span>
+        <p>
+          പല കുടുംബപ്രശ്നങ്ങളുടെയും പ്രധാന കാരണം സാമ്പത്തികമായ പൊരുത്തക്കേടുകളാണ്. വിവാഹജീവിതത്തിലേക്ക് കടക്കുമ്പോൾ പണത്തെക്കുറിച്ചുള്ള തുറന്ന ചർച്ചകൾ അത്യന്താപേക്ഷിതമാണ്.
+        </p>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(255, 183, 3, 0.12); color: var(--marigold);">💵</div>
+            <div class="feature-content">
+              <h4>തുറന്ന ചർച്ചകൾ (Disclose Finances)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">രണ്ടുപേരുടെയും വരുമാനവും ശമ്പളവും പരസ്പരം കൃത്യമായി അറിഞ്ഞിരിക്കുക. <span class="sub-english">Be transparent about incomes and individual earnings.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(0, 245, 212, 0.12); color: var(--mint);">📊</div>
+            <div class="feature-content">
+              <h4>ബജറ്റിംഗ് & ലക്ഷ്യങ്ങൾ (Budgeting & Goals)</h4>
+              <p style="margin: 0; font-size: 0.95rem;">രണ്ടുപേരും ഒരുമിച്ച് മാസ ബജറ്റുകൾ പ്ലാൻ ചെയ്യുകയും സമ്പാദ്യ ശീലങ്ങൾ വളർത്തുകയും ചെയ്യുക. <span class="sub-english">Plan monthly budgets and future goals collaboratively.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-image-wrapper">
+        <img src="images/couple_budget.png" alt="Indian Couple Managing Budget" class="slide-image">
+      </div>
+    </section>
+
+    <!-- SLIDE 12: Debt & Savings (കടബാധ്യതകളും സമ്പാദ്യവും) (Hour 3) -->
+    <section class="slide slide-grid-2" id="slide-12" data-hour="3">
+      <div class="glass-card">
+        <span class="badge badge-marigold">Hour 3: സാമ്പത്തികം</span>
+        <h2>കടബാധ്യതകളും സമ്പാദ്യങ്ങളും</h2>
+        <span class="subtitle-eng">Debts, Savings & Financial Rules</span>
+        <p>
+          വിവാഹജീവിതം തുടങ്ങുന്നതിനു മുൻപ് തന്നെ നിലവിലുള്ള എല്ലാ ബാധ്യതകളും പങ്കാളിയോട് തുറന്നു പറയുന്നത് ഭാവിയിലെ വലിയ സാമ്പത്തിക പ്രതിസന്ധികൾ ഒഴിവാക്കും.
+        </p>
+        <div class="feature-list" style="margin-top: 15px;">
+          <div class="feature-item" style="border-left: 4px solid var(--coral);">
+            <div class="feature-content">
+              <h4 class="accent-txt-coral">കടങ്ങൾ മറച്ചുവെക്കരുത് (Never Hide Debts)</h4>
+              <p style="margin: 0; font-size: 0.9rem;">ലോണുകൾ, ക്രെഡിറ്റ് കാർഡ് കുടിശ്ശികകൾ എന്നിവ കൃത്യമായി പങ്കാളിയുമായി പങ്കുവെക്കുക. <span class="sub-english">Disclose credit cards and outstanding loans.</span></p>
+            </div>
+          </div>
+          
+          <div class="feature-item" style="border-left: 4px solid var(--mint);">
+            <div class="feature-content">
+              <h4 class="accent-txt-mint">അടിയന്തിര ഫണ്ട് (Emergency Fund)</h4>
+              <p style="margin: 0; font-size: 0.9rem;">കുറഞ്ഞത് 3-6 മാസത്തെ ചെലവുകൾക്ക് ആവശ്യമായ പണം അടിയന്തിര ആവശ്യങ്ങൾക്കായി സൂക്ഷിക്കുക. <span class="sub-english">Keep 3-6 months of expenses in an emergency fund.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; background: rgba(255, 183, 3, 0.05); gap: 15px;">
+        <h3 class="accent-txt-marigold">സാമ്പത്തിക നിയമങ്ങൾ (Financial Rules):</h3>
+        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+          <strong>50/30/20 റൂൾ:</strong>
+          <ul style="margin-left: 20px; margin-top: 10px; font-size: 0.95rem; color: var(--text-sub);">
+            <li>50% - ആവശ്യങ്ങൾ (Needs: വീട്ടുചെലവ്, വാടക)</li>
+            <li>30% - ആഗ്രഹങ്ങൾ (Wants: വിനോദം, യാത്ര)</li>
+            <li>20% - സമ്പാദ്യം / നിക്ഷേപം (Savings/Investments)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: Hour 4 Intro: ഒരുമിച്ചുള്ള പ്രയാണം (Hour 4) -->
+    <section class="slide slide-grid-2" id="slide-13" data-hour="4">
+      <div class="glass-card">
+        <span class="badge badge-mint">Hour 4: പ്രയാണം</span>
+        <h2>ഒരുമിച്ച് വളരുക, ഒരു ലക്ഷ്യത്തിലേക്ക്</h2>
+        <span class="subtitle-eng">Growing Together & Shared Vision</span>
+        <p>
+          വിവാഹം എന്നത് കേവലം ഒരു ചടങ്ങല്ല, അതൊരു ജീവിതകാലം മുഴുവൻ നീണ്ടുനിൽക്കുന്ന യാത്രയാണ്. ഇതിൽ ഉയർച്ച താഴ്ചകൾ ഒരുമിച്ച് നേരിടാൻ നമ്മൾ തയ്യാറാകണം.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(0, 245, 212, 0.12); color: var(--mint);">🌱</div>
+            <div class="feature-content">
+              <h4>വ്യക്തിഗത വളർച്ചയെ പിന്തുണയ്ക്കുക</h4>
+              <p style="margin: 0; font-size: 0.95rem;">പങ്കാളിയുടെ തൊഴിൽപരവും വ്യക്തിപരവുമായ സ്വപ്നങ്ങൾക്ക് പൂർണ്ണ പിന്തുണ നൽകുക. <span class="sub-english">Support your partner's career and personal growth.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" style="background: rgba(255, 111, 97, 0.12); color: var(--coral);">🌟</div>
+            <div class="feature-content">
+              <h4>ഒരുമിച്ച് ലക്ഷ്യങ്ങൾ കണ്ടെത്തുക</h4>
+              <p style="margin: 0; font-size: 0.95rem;">ഭാവിയിലേക്കുള്ള വീട്, കുട്ടികൾ, കുടുംബ മൂല്യങ്ങൾ എന്നിവ ചർച്ച ചെയ്തു രൂപീകരിക്കുക. <span class="sub-english">Discover and align on future family values and goals.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-image-wrapper">
+        <img src="images/couple_future.png" alt="Indian Couple looking at future" class="slide-image">
+      </div>
+    </section>
+
+    <!-- SLIDE 14: Marriage Equation & Doughnut Chart (Hour 4) -->
+    <section class="slide slide-grid-2" id="slide-chart" data-hour="4">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-mint">Hour 4: പ്രയാണം</span>
+        <h2>ദാമ്പത്യ സമവാക്യം</h2>
+        <span class="subtitle-eng">The Marriage Equation</span>
+        
+        <div class="math-container">
+          <!-- Custom CSS Equation Layout to prevent MathML bugs -->
+          <div class="marriage-equation-css">
+            <span class="eq-term eq-success">ദാമ്പത്യവിജയം</span>
+            <span class="eq-operator">=</span>
+            <div class="eq-fraction">
+              <div class="eq-numerator">
+                <span class="eq-term eq-comm">ആശയവിനിമയം</span>
+                <span class="eq-operator">&times;</span>
+                <span class="eq-term eq-trust">വിശ്വാസം</span>
+              </div>
+              <div class="eq-denominator">
+                <span class="eq-term eq-ego">അഹംഭാവം (Ego)</span>
+              </div>
+            </div>
+            <span class="eq-operator">+</span>
+            <span class="eq-term eq-values">പങ്കുവെച്ച മൂല്യങ്ങൾ</span>
+          </div>
+          
+          <div class="equation-legend">
+            <div class="legend-item"><span class="accent-txt-mint">&#9679;</span> ആശയവിനിമയം (Communication)</div>
+            <div class="legend-item"><span class="accent-txt-violet">&#9679;</span> വിശ്വാസം (Trust)</div>
+            <div class="legend-item"><span class="accent-txt-coral">&#9679;</span> അഹംഭാവം (Ego)</div>
+            <div class="legend-item"><span class="accent-txt-marigold">&#9679;</span> മൂല്യങ്ങൾ (Values)</div>
+          </div>
+        </div>
+        <p style="font-size: 0.95rem; margin: 0;">
+          അഹംഭാവം പൂജ്യത്തോട് അടുക്കുമ്പോഴും, ആശയവിനിമയവും വിശ്വാസവും പരമാവധി ഉയരുമ്പോഴും ദാമ്പത്യവിജയം അനന്തമായി വർദ്ധിക്കുന്നു.
+          <span class="sub-english">As ego approaches zero, and communication and trust peak, marital success grows exponentially.</span>
+        </p>
+      </div>
+
+      <!-- Doughnut Chart Section -->
+      <div class="glass-card chart-container" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <h3 class="accent-txt-mint" style="margin-bottom: 20px; text-align: center;">വിജയത്തിന്റെ 4 പ്രധാന തൂണുകൾ (4 Pillars)</h3>
+        
+        <div class="donut-svg-wrapper">
+          <svg class="donut-svg" viewBox="0 0 100 100">
+            <!-- Background circle -->
+            <circle class="donut-bg" cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="24"></circle>
+            
+            <!-- Segment 1: Communication (30%) - Coral -->
+            <circle id="seg-communication" class="donut-segment" cx="50" cy="50" r="38" 
+                    stroke="var(--coral)" stroke-dasharray="0 238.76" stroke-dashoffset="0"
+                    data-pct="30" data-name="ആശയവിനിമയം" data-desc="Communication"></circle>
+                    
+            <!-- Segment 2: Trust (30%) - Violet -->
+            <circle id="seg-trust" class="donut-segment" cx="50" cy="50" r="38" 
+                    stroke="var(--violet)" stroke-dasharray="0 238.76" stroke-dashoffset="-71.63"
+                    data-pct="30" data-name="പരസ്പര വിശ്വാസം" data-desc="Trust"></circle>
+                    
+            <!-- Segment 3: Shared Finance (20%) - Marigold -->
+            <circle id="seg-finance" class="donut-segment" cx="50" cy="50" r="38" 
+                    stroke="var(--marigold)" stroke-dasharray="0 238.76" stroke-dashoffset="-143.26"
+                    data-pct="20" data-name="സാമ്പത്തിക പങ്കാളിത്തം" data-desc="Finance"></circle>
+                    
+            <!-- Segment 4: Quality Time (20%) - Mint -->
+            <circle id="seg-time" class="donut-segment" cx="50" cy="50" r="38" 
+                    stroke="var(--mint)" stroke-dasharray="0 238.76" stroke-dashoffset="-191.01"
+                    data-pct="20" data-name="ഗുണനിലവാരമുള്ള സമയം" data-desc="Quality Time"></circle>
+          </svg>
+          
+          <div class="donut-center-text">
+            <span class="donut-center-num">100%</span>
+            <span class="donut-center-lbl">ദാമ്പത്യവിജയം</span>
+          </div>
+        </div>
+
+        <!-- Chart interactive Legend -->
+        <div class="chart-legend">
+          <div class="chart-legend-item" data-segment="seg-communication">
+            <span class="chart-legend-dot" style="background: var(--coral);"></span>
+            <span>ആശയവിനിമയം (30%)</span>
+          </div>
+          <div class="chart-legend-item" data-segment="seg-trust">
+            <span class="chart-legend-dot" style="background: var(--violet);"></span>
+            <span>വിശ്വാസം (30%)</span>
+          </div>
+          <div class="chart-legend-item" data-segment="seg-finance">
+            <span class="chart-legend-dot" style="background: var(--marigold);"></span>
+            <span>ധനകാര്യം (20%)</span>
+          </div>
+          <div class="chart-legend-item" data-segment="seg-time">
+            <span class="chart-legend-dot" style="background: var(--mint);"></span>
+            <span>സമയം നൽകൽ (20%)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 15: Weekly Relationship Checklist Table (Hour 4) -->
+    <section class="slide" id="slide-15" data-hour="4">
+      <div class="glass-card" style="width: 100%;">
+        <span class="badge badge-mint">Hour 4: പ്രയാണം</span>
+        <h2>പ്രതിവാര ദാമ്പത്യ ചെക്ക്ലിസ്റ്റ്</h2>
+        <span class="subtitle-eng">Weekly Relationship Checklist</span>
+        <p style="margin-bottom: 10px;">
+          ബന്ധങ്ങൾ എപ്പോഴും മനോഹരമായിരിക്കാൻ താഴെ പറയുന്ന ശീലങ്ങൾ ഓരോ ആഴ്ചയും ഒരുമിച്ച് പ്രാവർത്തികമാക്കുക. (ക്ലിക്ക് ചെയ്ത് പരിശോധിക്കുക)
+        </p>
+
+        <div class="checklist-table-wrapper">
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th class="checkbox-col">സ്റ്റാറ്റസ്</th>
+                <th>പ്രവർത്തി (Weekly Habit)</th>
+                <th>ലക്ഷ്യം (Purpose)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>
+                  <strong>ഡേറ്റ് നൈറ്റ് / പ്രത്യേക സമയം</strong>
+                  <span class="sub-english">Date Night / Exclusive Couple Time</span>
+                </td>
+                <td>ആഴ്ചയിൽ ഒരിക്കൽ കുറഞ്ഞത് 1 മണിക്കൂർ തടസ്സങ്ങളില്ലാതെ സംസാരിക്കാൻ മാറ്റിവെക്കുക. <span class="sub-english">Dedicate at least 1 hour a week for focused couple talk.</span></td>
+              </tr>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>
+                  <strong>ബജറ്റ് അവലോകനം</strong>
+                  <span class="sub-english">Weekly Expense & Budget Review</span>
+                </td>
+                <td>സാമ്പത്തിക കാര്യങ്ങളിലെ പരസ്പര വ്യക്തത ഉറപ്പാക്കുകയും ബജറ്റ് ക്രമീകരിക്കുകയും ചെയ്യുക. <span class="sub-english">Maintain transparency on finances and manage the weekly budget.</span></td>
+              </tr>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>
+                  <strong>നന്ദിയും സ്നേഹവും പ്രകടിപ്പിക്കൽ</strong>
+                  <span class="sub-english">Appreciation & Gratitude Check</span>
+                </td>
+                <td>പങ്കാളി ചെയ്ത നല്ല കാര്യങ്ങൾ ഓർക്കുകയും നന്ദി പറയുകയും ചെയ്യുക. <span class="sub-english">Express sincere thanks for specific gestures and assistance.</span></td>
+              </tr>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>
+                  <strong>മനസ്സ് തുറന്നുള്ള ചർച്ചകൾ</strong>
+                  <span class="sub-english">Emotional & Spiritual Alignment</span>
+                </td>
+                <td>വ്യാകുലതകൾ, സന്തോഷങ്ങൾ എന്നിവ തുറന്നു പങ്കുവെക്കുക. മുൻവിധിയില്ലാതെ കേൾക്കുക. <span class="sub-english">Share emotional highlights, concerns, and listen non-judgmentally.</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; display: flex; justify-content: center; gap: 15px; align-items: center;">
+          <span style="font-weight: 700; color: var(--mint);">നിങ്ങൾക്ക് സന്തോഷകരമായ ഒരു ദാമ്പത്യജീവിതം ആശംസിക്കുന്നു! ❤️</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Navigation Controls -->
+  <footer>
+    <div class="help-tips">
+      <span>Navigation: Use keyboard <span class="keyboard-key">&larr;</span> / <span class="keyboard-key">&rarr;</span> or <span class="keyboard-key">Spacebar</span></span>
+    </div>
+    
+    <div class="nav-buttons">
+      <button class="nav-btn" id="prev-btn" aria-label="Previous Slide">&larr;</button>
+      <div class="slide-number">1 / 15</div>
+      <button class="nav-btn" id="next-btn" aria-label="Next Slide">&rarr;</button>
+    </div>
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const slideNumDisplay = document.querySelector('.slide-number');
+  const flowSteps = document.querySelectorAll('.flow-step');
+  const flowLines = document.querySelectorAll('.flow-line');
+  
+  let currentSlideIndex = 0;
+  const totalSlides = slides.length;
+
+  // Initialize slides
+  updateSlides();
+
+  // Navigation functions
+  function nextSlide() {
+    if (currentSlideIndex < totalSlides - 1) {
+      currentSlideIndex++;
+      updateSlides();
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlideIndex > 0) {
+      currentSlideIndex--;
+      updateSlides();
+    }
+  }
+
+  // Update layout and active states
+  function updateSlides() {
+    slides.forEach((slide, index) => {
+      slide.classList.remove('active', 'previous', 'next');
+      if (index === currentSlideIndex) {
+        slide.classList.add('active');
+        // Trigger specific slide animations
+        handleSlideActivation(slide);
+      } else if (index < currentSlideIndex) {
+        slide.classList.add('previous');
+      } else {
+        slide.classList.add('next');
+      }
+    });
+
+    // Update buttons
+    prevBtn.disabled = currentSlideIndex === 0;
+    nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+
+    // Update slide number display
+    slideNumDisplay.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+
+    // Update Flow Tracker
+    updateFlowTracker();
+  }
+
+  // Flow Tracker state controller
+  function updateFlowTracker() {
+    const activeSlide = slides[currentSlideIndex];
+    const currentHour = parseInt(activeSlide.getAttribute('data-hour') || '0');
+
+    flowSteps.forEach(step => {
+      const stepHour = parseInt(step.getAttribute('data-hour-step'));
+      step.classList.remove('active', 'completed');
+      
+      if (currentHour === 0) {
+        // Cover slide: none active or completed
+      } else if (stepHour === currentHour) {
+        step.classList.add('active');
+      } else if (stepHour < currentHour) {
+        step.classList.add('completed');
+      }
+    });
+
+    flowLines.forEach((line, index) => {
+      const lineHour = index + 1; // line 1 connects Hour 1 & Hour 2, etc.
+      line.classList.remove('completed');
+      if (currentHour > lineHour) {
+        line.classList.add('completed');
+      }
+    });
+  }
+
+  // Handle specific animations/logic when a slide is active
+  function handleSlideActivation(slide) {
+    // If it is the chart slide (Slide 9)
+    if (slide.id === 'slide-chart') {
+      animateDonutChart();
+    }
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      prevSlide();
+    }
+  });
+
+  // Click buttons
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Flow tracker click-to-navigate
+  flowSteps.forEach(step => {
+    step.addEventListener('click', () => {
+      const targetHour = parseInt(step.getAttribute('data-hour-step'));
+      // Find first slide of that hour
+      const targetSlideIndex = Array.from(slides).findIndex(s => parseInt(s.getAttribute('data-hour') || '0') === targetHour);
+      if (targetSlideIndex !== -1) {
+        currentSlideIndex = targetSlideIndex;
+        updateSlides();
+      }
+    });
+  });
+
+  // Start Button on Title Slide
+  const startBtn = document.getElementById('start-btn');
+  if (startBtn) {
+    startBtn.addEventListener('click', () => {
+      nextSlide();
+    });
+  }
+
+  // INTERACTIVE: Love Languages toggle cards
+  const loveCards = document.querySelectorAll('.love-languages-grid .love-card:not([data-conflict-card])');
+  const loveDetailTitle = document.getElementById('love-detail-title');
+  const loveDetailMal = document.getElementById('love-detail-mal');
+  const loveDetailEng = document.getElementById('love-detail-eng');
+
+  loveCards.forEach(card => {
+    card.addEventListener('click', () => {
+      loveCards.forEach(c => c.classList.remove('active-card'));
+      card.classList.add('active-card');
+
+      const title = card.getAttribute('data-title');
+      const mal = card.getAttribute('data-mal');
+      const eng = card.getAttribute('data-eng');
+
+      loveDetailTitle.textContent = title;
+      loveDetailMal.textContent = mal;
+      loveDetailEng.textContent = eng;
+
+      // Pulse animation effect on description box
+      const descBox = document.getElementById('love-desc-box');
+      descBox.style.animation = 'none';
+      descBox.offsetHeight; /* trigger reflow */
+      descBox.style.animation = 'pulseGlow 0.5s ease-out';
+    });
+  });
+
+  // INTERACTIVE: Conflict Styles toggle cards
+  const conflictCards = document.querySelectorAll('[data-conflict-card]');
+  const conflictDetailTitle = document.getElementById('conflict-detail-title');
+  const conflictDetailMal = document.getElementById('conflict-detail-mal');
+  const conflictDetailEng = document.getElementById('conflict-detail-eng');
+  const conflictDescBox = document.getElementById('conflict-desc-box');
+
+  conflictCards.forEach(card => {
+    card.addEventListener('click', () => {
+      conflictCards.forEach(c => c.classList.remove('active-card'));
+      card.classList.add('active-card');
+
+      const title = card.getAttribute('data-title');
+      const mal = card.getAttribute('data-mal');
+      const eng = card.getAttribute('data-eng');
+
+      conflictDetailTitle.textContent = title;
+      conflictDetailMal.textContent = mal;
+      conflictDetailEng.textContent = eng;
+
+      // Pulse animation effect
+      conflictDescBox.style.animation = 'none';
+      conflictDescBox.offsetHeight; /* trigger reflow */
+      conflictDescBox.style.animation = 'pulseGlow 0.5s ease-out';
+    });
+  });
+
+  // INTERACTIVE: Custom checkbox table
+  const checkboxes = document.querySelectorAll('.custom-checkbox');
+  checkboxes.forEach(cb => {
+    cb.addEventListener('click', () => {
+      cb.classList.toggle('checked');
+    });
+  });
+
+  // SVG Donut Chart Logic
+  const chartSegments = document.querySelectorAll('.donut-segment');
+  const chartLegendItems = document.querySelectorAll('.chart-legend-item');
+  const donutCenterNum = document.querySelector('.donut-center-num');
+  const donutCenterLbl = document.querySelector('.donut-center-lbl');
+
+  function animateDonutChart() {
+    chartSegments.forEach(segment => {
+      const percentage = parseFloat(segment.getAttribute('data-pct'));
+      const circumference = 238.76;
+      const strokeDashoffset = circumference - (percentage / 100) * circumference;
+      
+      // First reset
+      segment.style.strokeDashoffset = circumference;
+      
+      // Delay slightly for render transition
+      setTimeout(() => {
+        segment.style.strokeDashoffset = strokeDashoffset;
+      }, 100);
+    });
+  }
+
+  // Donut chart hover/click interactives
+  chartSegments.forEach(segment => {
+    segment.addEventListener('mouseenter', () => highlightSegment(segment.id));
+    segment.addEventListener('mouseleave', resetSegmentHighlight);
+    segment.addEventListener('click', () => highlightSegment(segment.id, true));
+  });
+
+  chartLegendItems.forEach(item => {
+    item.addEventListener('mouseenter', () => highlightSegment(item.getAttribute('data-segment')));
+    item.addEventListener('mouseleave', resetSegmentHighlight);
+    item.addEventListener('click', () => highlightSegment(item.getAttribute('data-segment'), true));
+  });
+
+  function highlightSegment(id, persist = false) {
+    chartSegments.forEach(segment => {
+      if (segment.id === id) {
+        segment.style.strokeWidth = '30';
+        segment.style.filter = 'drop-shadow(0px 0px 8px rgba(255,255,255,0.4))';
+        
+        const pct = segment.getAttribute('data-pct');
+        const name = segment.getAttribute('data-name');
+        donutCenterNum.textContent = `${pct}%`;
+        donutCenterLbl.textContent = name;
+        
+        // Highlight corresponding legend item
+        chartLegendItems.forEach(item => {
+          if (item.getAttribute('data-segment') === id) {
+            item.classList.add('highlighted');
+          } else {
+            item.classList.remove('highlighted');
+          }
+        });
+      } else {
+        segment.style.strokeWidth = '24';
+        segment.style.filter = 'none';
+      }
+    });
+  }
+
+  function resetSegmentHighlight() {
+    chartSegments.forEach(segment => {
+      segment.style.strokeWidth = '24';
+      segment.style.filter = 'none';
+    });
+    
+    chartLegendItems.forEach(item => item.classList.remove('highlighted'));
+    
+    donutCenterNum.textContent = '100%';
+    donutCenterLbl.textContent = 'ദാമ്പത്യവിജയം';
+  }
+});
+
+// Dynamic animation style definition for description boxes
+const styleSheet = document.createElement("style");
+styleSheet.textContent = `
+  @keyframes pulseGlow {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+    70% { transform: scale(1.01); box-shadow: 0 0 15px 5px rgba(138, 43, 226, 0.2); }
+    100% { transform: scale(1); box-shadow: none; }
+  }
+`;
+document.head.appendChild(styleSheet);
+
+</script>
+</body>
+</html>
