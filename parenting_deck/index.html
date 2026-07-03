@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>പാരന്റിംഗ് മാസ്റ്റർക്ലാസ്സ് | Parenting Masterclass</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Slide Deck Container -->
+  <main class="deck-container">
+
+    <!-- SLIDE 1: Cover Slide (Hour 0) -->
+    <section class="slide active" id="slide-1" data-hour="0">
+      <div class="glass-card cover-layout">
+        <span class="badge badge-coral">Masterclass for Young Parents</span>
+        <h1 class="cover-title">പാരന്റിംഗ് മാസ്റ്റർക്ലാസ്സ്:<br>കളിച്ചിരികളിൽ നിന്ന് സ്വഭാവ രൂപീകരണത്തിലേക്ക്</h1>
+        <p style="max-width: 750px;">
+          പുതിയ കാലഘട്ടത്തിലെ കുട്ടികളുടെ മനശ്ശാസ്ത്രം മനസ്സിലാക്കാനും അവരെ സ്നേഹത്തോടെയും അച്ചടക്കത്തോടെയും വളർത്താനും സഹായിക്കുന്ന വഴികാട്ടി.
+          <span class="sub-english">A guide to understanding modern child psychology and raising children with love and positive discipline.</span>
+        </p>
+        <button class="start-btn" id="start-btn">ക്ലാസ്സ് ആരംഭിക്കാം (Start Course) &rarr;</button>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Course Agenda (Hour 0) -->
+    <section class="slide" id="slide-2" data-hour="0">
+      <div class="glass-card" style="width: 100%;">
+        <span class="badge badge-coral">Course Agenda</span>
+        <h2>4-മണിക്കൂർ ക്ലാസ്സ് ഘടന</h2>
+        <span class="subtitle-eng">4-Hour Masterclass Roadmap</span>
+        <p style="margin-bottom: 25px;">കുട്ടികളെ സ്നേഹത്തോടെയും അച്ചടക്കത്തോടെയും വളർത്തുന്നതിനുള്ള പ്രധാന അധ്യായങ്ങൾ താഴെ പറയുന്ന രീതിയിൽ ക്രമീകരിച്ചിരിക്കുന്നു.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+          <div class="feature-item" style="border-top: 4px solid var(--coral); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--coral);">Hour 1: കുട്ടികളുടെ വികാസം</div>
+            <p style="font-size: 0.95rem; margin: 0; color: var(--text-sub);">
+              കുട്ടികളുടെ പെരുമാറ്റം മനസ്സിലാക്കുക, വികാരങ്ങൾ തിരിച്ചറിയൽ, സഹാനുഭൂതിയും പിന്തുണയും.
+              <span class="sub-english">Child development, identifying emotions, empathy.</span>
+            </p>
+          </div>
+          
+          <div class="feature-item" style="border-top: 4px solid var(--violet); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--violet);">Hour 2: പോസിറ്റീവ് അച്ചടക്കം</div>
+            <p style="font-size: 0.95rem; margin: 0; color: var(--text-sub);">
+              അച്ചടക്കം സ്നേഹത്തിലൂടെ, ശിക്ഷയ്ക്ക് പകരം പോസിറ്റീവ് റീഡയറക്ഷൻ, അതിരുകൾ നിശ്ചയിക്കൽ.
+              <span class="sub-english">Positive discipline, boundaries, role modeling.</span>
+            </p>
+          </div>
+          
+          <div class="feature-item" style="border-top: 4px solid var(--marigold); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--marigold);">Hour 3: വൈകാരിക അടുപ്പം</div>
+            <p style="font-size: 0.95rem; margin: 0; color: var(--text-sub);">
+              കുട്ടികളുമായുള്ള ആത്മബന്ധം, 5 സ്നേഹഭാഷകൾ, തുറന്ന ആശയвиനിമയം.
+              <span class="sub-english">Emotional connect, 5 love languages of children.</span>
+            </p>
+          </div>
+          
+          <div class="feature-item" style="border-top: 4px solid var(--mint); flex-direction: column; gap: 10px;">
+            <div style="font-weight: 800; font-size: 1.2rem; color: var(--mint);">Hour 4: ഡിജിറ്റൽ പേരന്റിംഗ്</div>
+            <p style="font-size: 0.95rem; margin: 0; color: var(--text-sub);">
+              ഡിജിറ്റൽ യുഗത്തിലെ പേരന്റിംഗ്, സ്ക്രീൻ ടൈം റൂൾസ്, പേരന്റിംഗ് സമവാക്യവും ചെക്ക്ലിസ്റ്റും.
+              <span class="sub-english">Digital-age parenting, screen rules, checklist.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Hour 1 Intro (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-3" data-hour="1">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-coral">Hour 1: കുട്ടികളുടെ വികാസം</span>
+        <h2>കുട്ടികളുടെ വികാസവും പെരുമാറ്റങ്ങളും</h2>
+        <span class="subtitle-eng">Understanding Child Behavior & Development</span>
+        <p>
+          കുട്ടികളുടെ പെരുമാറ്റങ്ങൾ വെറുമൊരു ശാഠ്യമല്ല, മറിച്ച് തങ്ങളുടെ വികാരങ്ങൾ പ്രകടിപ്പിക്കാനുള്ള അവരുടെ ശ്രമമാണ്. ഇത് തിരിച്ചറിയുകയാണ് നല്ല പേരന്റിംഗിന്റെ ഒന്നാമത്തെ പടി.
+          <span class="sub-english">Understanding that behavior is a form of communication is the first step in empathetic parenting.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-coral">&#9733;</span></div>
+            <div class="feature-content">
+              <h4>മുൻവിധികളില്ലാതെ കാണുക</h4>
+              <p style="font-size: 0.95rem; margin: 0;">കുട്ടികളുടെ ഭാഗത്തുനിന്നു ചിന്തിച്ച് അവരുടെ പ്രവർത്തികൾക്ക് പിന്നിലെ യഥാർത്ഥ കാരണം കണ്ടെത്തുക.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-image-wrapper">
+        <img class="slide-image" src="images/parenting_love.png" alt="Indian Parents Playing with Child">
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Identifying Emotions (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-4" data-hour="1">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-coral">Hour 1: കുട്ടികളുടെ വികാസം</span>
+        <h2>കുട്ടികളുടെ വികാരങ്ങൾ തിരിച്ചറിയൽ</h2>
+        <span class="subtitle-eng">Identifying Children's Emotional States</span>
+        <p>താഴെയുള്ള വിവിധ വൈകാരിക അവസ്ഥകളിൽ ക്ലിക്ക് ചെയ്തു അവ കൈകാര്യം ചെയ്യേണ്ട രീതികൾ മനസ്സിലാക്കുക.</p>
+        
+        <div class="love-languages-grid">
+          <div class="love-card active-card" data-emotion="tantrums">
+            <h3 class="accent-txt-coral">1. വാശി / ശാഠ്യം</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Tantrums / Crying</span>
+          </div>
+          <div class="love-card" data-emotion="silence">
+            <h3 class="accent-txt-violet">2. മൗനം / പേടി</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Silence / Withdrawal</span>
+          </div>
+          <div class="love-card" data-emotion="curiosity">
+            <h3 class="accent-txt-marigold">3. ജിജ്ഞാസ</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Curiosity / Questions</span>
+          </div>
+          <div class="love-card" data-emotion="excitement">
+            <h3 class="accent-txt-mint">4. അമിത സന്തോഷം</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">High Energy / Excitement</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" id="emotion-desc-box" style="display: flex; flex-direction: column; justify-content: center; height: 100%; border-left: 4px solid var(--coral);">
+        <h3 id="emotion-title-mal" class="accent-txt-coral">വാശി / ശാഠ്യം (Tantrums)</h3>
+        <p id="emotion-detail-mal" style="font-size: 1.15rem; line-height: 1.85;">
+          കുട്ടി അമിതമായി കരയുമ്പോഴും വാശി പിടിക്കുമ്പോഴും വഴക്കുപറയാതെ അവരെ ചേർത്തുപിടിച്ച് ശാന്തരാക്കുക. അവരോടൊപ്പം ഇരുന്ന് 'അമ്മ/അച്ഛൻ കൂടെയുണ്ട്' എന്ന സുരക്ഷിതത്വം നൽകുകയാണ് ആവശ്യം.
+        </p>
+        <p id="emotion-detail-eng" class="sub-english">
+          Avoid yelling when a child has a tantrum. Instead, practice co-regulation. Stay close and provide a calming presence to help them regulate their emotions.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Handling Tantrums (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-5" data-hour="1">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-coral">Hour 1: കുട്ടികളുടെ വികാസം</span>
+        <h2>ബഹളങ്ങളും വാശിയും കൈകാര്യം ചെയ്യൽ</h2>
+        <span class="subtitle-eng">De-escalating Tantrums and Meltdowns</span>
+        <p>
+          കുട്ടികളുടെ ഉള്ളിലെ വൈകാരിക തരംഗം അടങ്ങാൻ അവരുടെ തലച്ചോറിന് സമയം ആവശ്യമുണ്ട്. ഇതിനെ **Co-Regulation** എന്ന് വിളിക്കുന്നു.
+          <span class="sub-english">Co-regulation is the process where a parent's calm presence helps soothe the child's nervous system.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-coral">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>ആദ്യം നമ്മൾ ശാന്തരാവുക</h4>
+              <p style="font-size: 0.95rem; margin: 0;">നമ്മൾ ദേഷ്യപ്പെടുമ്പോൾ കുട്ടിയുടെ ഉള്ളിലെ ഭയം വർദ്ധിക്കുകയേ ഉള്ളൂ. ആദ്യം സ്വന്തം ദേഷ്യം നിയന്ത്രിക്കുക.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-coral">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>ലളിതമായ നിർദ്ദേശങ്ങൾ നൽകുക</h4>
+              <p style="font-size: 0.95rem; margin: 0;">വാശി പിടിക്കുന്ന നിമിഷത്തിൽ വലിയ ഉപദേശങ്ങൾ ഒഴിവാക്കി ചെറിയ ആലിംഗനങ്ങളോ സാന്ത്വന വാക്കുകളോ നൽകുക.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%; background: rgba(224, 90, 71, 0.03);">
+        <h3 class="accent-txt-coral">അറിയേണ്ട പ്രധാന സംഗതി</h3>
+        <span class="subtitle-eng">Parental Calm is Contagious</span>
+        <p style="font-size: 1.15rem; line-height: 1.85;">
+          കുട്ടി ബഹളം വെക്കുമ്പോൾ നമ്മൾ ഉച്ചത്തിൽ സംസാരിച്ചാൽ അതൊരു പോരാട്ടമായി മാറും. നമ്മുടെ താഴ്ന്ന ശബ്ദവും ശാന്തതയും കുട്ടിയുടെ ശാഠ്യത്തെ സാവധാനം ഇല്ലാതാക്കും.
+        </p>
+        <p class="sub-english">
+          Yelling back at a screaming child only creates a power struggle. A low, calm tone shows that you are in control, helping them feel safe to calm down.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Empathy & Safety (Hour 1) -->
+    <section class="slide slide-grid-2" id="slide-6" data-hour="1">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-coral">Hour 1: കുട്ടികളുടെ വികാസം</span>
+        <h2>സഹാനുഭൂതിയും സുരക്ഷിതത്വവും</h2>
+        <span class="subtitle-eng">Building Empathy and Psychological Safety</span>
+        <p>
+          കുട്ടികൾക്ക് തങ്ങളുടെ വികാരങ്ങൾ പങ്കുവെക്കാൻ കഴിയുന്ന സുരക്ഷിതമായ അന്തരീക്ഷം വീട്ടിൽ സൃഷ്ടിക്കുക.
+          <span class="sub-english">Creating safety allows children to express failures and fears without fear of immediate rejection or punishment.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-mint">&#10003;</span></div>
+            <div class="feature-content">
+              <h4>വികാരങ്ങളെ വിലകുറച്ചു കാണരുത്</h4>
+              <p style="font-size: 0.95rem; margin: 0;">ചെറിയ കളിപ്പാട്ടം നഷ്ടപ്പെടുമ്പോൾ കുട്ടി കരയുന്നത് വലിയ നഷ്ടമായി കണ്ടാണ്. അവരോടൊപ്പം സങ്കടം പങ്കിടുക.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-mint">&#10003;</span></div>
+            <div class="feature-content">
+              <h4>തുറന്ന ചർച്ചകൾ</h4>
+              <p style="font-size: 0.95rem; margin: 0;">തെറ്റുകൾ സംഭവിക്കുമ്പോൾ വഴക്കുപറയാതെ 'ഇതിൽ നിന്ന് നമുക്ക് എന്ത് പഠിക്കാം' എന്ന് സൗമ്യമായി ചോദിക്കുക.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <h3 class="accent-txt-mint">സുവർണ്ണ വാക്യം</h3>
+        <span class="subtitle-eng">Connection Before Correction</span>
+        <p style="font-size: 1.15rem; line-height: 1.85;">
+          കുട്ടിയുടെ പെരുമാറ്റം തിരുത്തുന്നതിനേക്കാൾ മുൻപ് അവരുമായി വൈകാരിക ബന്ധം স্থাপনിക്കുക. മനസ്സിലാക്കുന്ന ഒരു രക്ഷിതാവിനെ മാത്രമേ കുട്ടി അനുസരിക്കുകയുള്ളൂ.
+        </p>
+        <p class="sub-english">
+          Connect with your child before correcting their behavior. A child is more likely to listen and cooperate when they feel understood and valued.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Hour 2 Intro (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-7" data-hour="2">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-violet">Hour 2: പോസിറ്റീവ് അച്ചടക്കം</span>
+        <h2>അച്ചടക്കം സ്നേഹത്തിലൂടെ</h2>
+        <span class="subtitle-eng">Positive Discipline & Guidance</span>
+        <p>
+          അച്ചടക്കം എന്നാൽ ഭയപ്പെടുത്തലോ ശിക്ഷയോ അല്ല, പകരം സ്നേഹത്തിലൂടെ സ്വയം നിയന്ത്രിക്കാൻ കുട്ടികളെ പഠിപ്പിക്കലാകുന്നു.
+          <span class="sub-english">Discipline is not about punishment; it is about teaching children self-regulation and boundaries through love.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-violet">&#9733;</span></div>
+            <div class="feature-content">
+              <h4>ആരോഗ്യകരമായ മാർഗ്ഗനിർദ്ദേശം</h4>
+              <p style="font-size: 0.95rem; margin: 0;">അരുതുകൾ മാത്രം പറയുന്നതിന് പകരം ചെയ്യേണ്ട ശരിയായ കാര്യങ്ങൾ നിർദ്ദേശിക്കുക.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-image-wrapper">
+        <img class="slide-image" src="images/parenting_discipline.png" alt="Indian Father Helping Child With Study">
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Positive Redirection (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-8" data-hour="2">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-violet">Hour 2: പോസിറ്റീവ് അച്ചടക്കം</span>
+        <h2>ശിക്ഷയ്ക്ക് പകരം പോസിറ്റീവ് റീഡയറക്ഷൻ</h2>
+        <span class="subtitle-eng">Positive Redirection vs Punishment</span>
+        <p>
+          കുട്ടികളുടെ ഭാഗത്തുനിന്ന് അബദ്ധങ്ങൾ സംഭവിക്കുമ്പോൾ ഉച്ചത്തിൽ ബഹളം വെക്കാതെ ശരിയായ വഴിയിലേക്ക് അവരെ ശ്രദ്ധ തിരിക്കുക.
+          <span class="sub-english">Redirect their focus to the desired positive behavior instead of reacting negative.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-violet">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>ശ്രദ്ധ മാറ്റുക</h4>
+              <p style="font-size: 0.95rem; margin: 0;">അപകടകരമായ കളികളിൽ ഏർപ്പെടുമ്പോൾ അതേക്കാൾ കൗതുകമുള്ള മറ്റൊരു കളി നിർദ്ദേശിക്കുക.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <h3 class="accent-txt-violet">സംഭാഷണത്തിലെ വ്യത്യാസം</h3>
+        <span class="subtitle-eng">Reframing Your Words</span>
+        <div class="comparison-container">
+          <div class="comparison-box">
+            <div class="comp-tag">തെറ്റ്</div>
+            <div class="comp-content">
+              <p>"ഇവിടെ ഓടി നടക്കരുത്, മിണ്ടാതിриക്ക്!" <span class="sub-english">"Stop running and sit quietly!"</span></p>
+            </div>
+          </div>
+          <div class="comparison-box better">
+            <div class="comp-tag">ശരി</div>
+            <div class="comp-content">
+              <p>"നമുക്ക് പതിയെ നടക്കാം, അല്ലെങ്കിൽ വീഴും." <span class="sub-english">"Let's walk gently so we stay safe."</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Healthy Boundaries (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-9" data-hour="2">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-violet">Hour 2: പോസിറ്റീവ് അച്ചടക്കം</span>
+        <h2>ആരോഗ്യകരമായ അതിരുകൾ നിശ്ചയിക്കൽ</h2>
+        <span class="subtitle-eng">Setting Healthy Routines & Boundaries</span>
+        <p>
+          കുട്ടികൾക്ക് ദിനചര്യകളിൽ വ്യക്തത നൽകുക. ഇത് അവരുടെ ഭയം കുറയ്ക്കുകയും ഉത്തരവാദിത്തം വർദ്ധിപ്പിക്കുകയും ചെയ്യും.
+          <span class="sub-english">Clear routines create emotional predictability, making children more cooperative.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-marigold">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>ദിനചര്യകൾ (Routines)</h4>
+              <p style="font-size: 0.95rem; margin: 0;">ഉറങ്ങുന്ന സമയം, പഠിക്കുന്ന സമയം, കളിക്കുന്ന സമയം എന്നിവ കൃത്യമായി പാലിക്കാൻ അവരെ സഹായിക്കുക.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-marigold">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>മുൻകൂട്ടി പറയുക (Advanced Warning)</h4>
+              <p style="font-size: 0.95rem; margin: 0;">"5 മിനിറ്റിനുള്ളിൽ കളി നിർത്തി നമ്മൾ ഭക്ഷണം കഴിക്കും" എന്ന് മുൻകൂട്ടി പറയുന്നത് ശാഠ്യം കുറയ്ക്കും.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%; background: rgba(234, 179, 8, 0.03);">
+        <h3 class="accent-txt-marigold">സ്ഥിരതയുടെ പ്രാധാന്യം</h3>
+        <span class="subtitle-eng">Consistency is Key</span>
+        <p style="font-size: 1.15rem; line-height: 1.85;">
+          അതിരുകൾ നിശ്ചയിക്കുമ്പോൾ ദമ്പതികൾ രണ്ടുപേരും ഒരേ നിലപാട് സ്വീകരിക്കുക. ഒരാൾ വിലക്കുന്ന കാര്യം മറ്റേയാൾ പ്രോത്സാഹിപ്പിച്ചാൽ കുട്ടി ആശയക്കുഴപ്പത്തിലാകും.
+        </p>
+        <p class="sub-english">
+          Ensure consistency in parental guidelines. If parents disagree on rules in front of the child, the child learns to exploit the disagreement.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: Role Modeling (Hour 2) -->
+    <section class="slide slide-grid-2" id="slide-10" data-hour="2">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-violet">Hour 2: പോസിറ്റീവ് അച്ചടക്കം</span>
+        <h2>固定 അതിരുകൾ (Role Modeling)</h2>
+        <h2>സ്വയം നിയന്ത്രണവും മാതൃകയും</h2>
+        <span class="subtitle-eng">Parental Self-Regulation & Role Modeling</span>
+        <p>
+          കുട്ടികൾ കേൾക്കുന്നതിനേക്കാൾ വേഗത്തിൽ നമ്മൾ ചെയ്യുന്നത് കണ്ട് പഠിക്കുന്നു. നമ്മുടെ പെരുമാറ്റമാണ് അവരുടെ ഒന്നാമത്തെ സിലബസ്.
+          <span class="sub-english">Children mirror parents. Your own reactions to stress are their primary emotional blueprint.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-coral">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>വീട്ടിലെ സംസാരം</h4>
+              <p style="font-size: 0.95rem; margin: 0;">ദമ്പതികൾ വീട്ടിൽ ബഹുമാനത്തോടെ സംസാരിക്കുന്നത് കാണുമ്പോൾ കുട്ടി സ്വഭാവികമായും മറ്റുള്ളവരെ ബഹുമാനിക്കാൻ പഠിക്കുന്നു.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-coral">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>ദേഷ്യത്തിൽ നിയന്ത്രണം</h4>
+              <p style="font-size: 0.95rem; margin: 0;">പ്രതിസന്ധികളിൽ നമ്മൾ നിയന്ത്രണം കൈവിടാതെ പ്രതികരിക്കുമ്പോൾ അവരും ആ സ്വഭാവരീതി വളർത്തിയെടുക്കും.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <h3 class="accent-txt-coral">അറിയേണ്ട പ്രായോഗിക സത്യം</h3>
+        <span class="subtitle-eng">Actions Speak Louder Than Words</span>
+        <p style="font-size: 1.15rem; line-height: 1.85;">
+          കുട്ടികളോട് ഫോൺ ഉപയോഗിക്കരുത് എന്ന് ഉച്ചത്തിൽ ഉപദേശിക്കുന്നതിനേക്കാൾ പ്രധാനം നമ്മൾ അവരുടെ മുൻപിൽ ഫോൺ ഉപയോഗം പരിമിതപ്പെടുത്തുന്നതാകുന്നു.
+        </p>
+        <p class="sub-english">
+          Limiting your own screen time in front of your children is far more effective than repeatedly lecturing them about the dangers of device addiction.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: Hour 3 Intro (Hour 3) -->
+    <section class="slide slide-grid-2" id="slide-11" data-hour="3">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-marigold">Hour 3: വൈകാരിക അടുപ്പം</span>
+        <h2>കുട്ടികളുമായുള്ള ആത്മബന്ധം</h2>
+        <span class="subtitle-eng">Deepening the Emotional Connection</span>
+        <p>
+          വൈകാരിക ബന്ധം ശക്തമാകുമ്പോഴാണ് കുട്ടികൾ കാര്യങ്ങൾ പങ്കുവെക്കാനും മാതാപിതാക്കളെ അനുസരിക്കാനും തയ്യാറാകുന്നത്.
+          <span class="sub-english">A strong emotional attachment forms the security base from which kids explore the world with confidence.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-marigold">&#9733;</span></div>
+            <div class="feature-content">
+              <h4>വൈകാരിക പിന്തുണ (Emotional Connect)</h4>
+              <p style="font-size: 0.95rem; margin: 0;">കുട്ടിയുടെ ആവശ്യങ്ങളോട് കൃത്യസമയത്ത് പ്രതികരിക്കുകയും സ്നേഹം വാക്കുകളിലൂടെയും പ്രവൃത്തിയിലൂടെയും കാട്ടുക.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-image-wrapper">
+        <img class="slide-image" src="images/parenting_future.png" alt="Happy Indian Family Outdoors">
+      </div>
+    </section>
+
+    <!-- SLIDE 12: 5 Love Languages of Children (Hour 3) -->
+    <section class="slide slide-grid-2" id="slide-12" data-hour="3">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-marigold">Hour 3: വൈകാരിക അടുപ്പം</span>
+        <h2>കുട്ടികളുടെ 5 സ്നേഹഭാഷകൾ</h2>
+        <span class="subtitle-eng">The 5 Love Languages of Children</span>
+        <p>കുട്ടികൾ അവരുടെ സ്നേഹം സ്വീകരിക്കുന്ന വിവിധ സ്നേഹഭാഷകളിൽ ക്ലിക്ക് ചെയ്തു വിശദമായി കാണുക.</p>
+        
+        <div class="love-languages-grid">
+          <div class="love-card active-card" data-lang="words">
+            <h3 class="accent-txt-coral">1. അഭിനന്ദന വാക്കുകൾ</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Words of Affirmation</span>
+          </div>
+          <div class="love-card" data-lang="time">
+            <h3 class="accent-txt-violet">2. ഗുണനിലവാരമുള്ള സമയം</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Quality Time</span>
+          </div>
+          <div class="love-card" data-lang="gifts">
+            <h3 class="accent-txt-marigold">3. സമ്മാനങ്ങൾ നൽകൽ</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Receiving Gifts</span>
+          </div>
+          <div class="love-card" data-lang="touch">
+            <h3 class="accent-txt-mint">4. സ്നേഹസ്പർശനം</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Physical Touch</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" id="love-desc-box" style="display: flex; flex-direction: column; justify-content: center; height: 100%; border-left: 4px solid var(--coral);">
+        <h3 id="love-title-mal" class="accent-txt-coral">അഭിനന്ദന വാക്കുകൾ (Words of Affirmation)</h3>
+        <p id="love-detail-mal" style="font-size: 1.15rem; line-height: 1.85;">
+          കുട്ടികളുടെ ചെറിയ നേട്ടങ്ങളെപ്പോലും പ്രോത്സാഹിപ്പിച്ചു സംസാരിക്കുക. "മോൻ ഇന്ന് നന്നായി കളിപ്പാട്ടങ്ങൾ ഒതുക്കിവെച്ചു, അമ്മയ്ക്ക് ഒരുപാട് ഇഷ്ടമായി" എന്ന വാചകങ്ങൾ അവരുടെ ആത്മവിശ്വാസം വളർത്തും.
+        </p>
+        <p id="love-detail-eng" class="sub-english">
+          Praise their specific efforts. Expressions like "I loved how beautifully you put away your toys today" build positive self-esteem and encourage healthy behaviors.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 13: Talking to Kids (Hour 3) -->
+    <section class="slide slide-grid-2" id="slide-13" data-hour="3">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-marigold">Hour 3: വൈകാരിക അടുപ്പം</span>
+        <h2>കുട്ടികളോട് സംസാരിക്കേണ്ട രീതി</h2>
+        <span class="subtitle-eng">Talking so Kids Will Listen & Listen so Kids Will Talk</span>
+        <p>
+          കുട്ടികളുടെ ഉയരത്തിലേക്ക് താഴെ ഇരുന്ന് സംസാരിക്കുമ്പോൾ അവർ നിങ്ങളെ കൂടുതൽ ബഹുമാനത്തോടെ കാണുന്നു.
+          <span class="sub-english">Eye-level communication signals to the child that they are important and their voices are valued.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-marigold">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>കണ്ണ് നോക്കുക (Eye Contact)</h4>
+              <p style="font-size: 0.95rem; margin: 0;">അവരുടെ തലത്തിലേക്ക് താണിരുന്ന് മുഖത്തേക്ക് നോക്കി സ്നേഹത്തോടെ സംസാരിക്കുക.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><span class="accent-txt-marigold">&#9679;</span></div>
+            <div class="feature-content">
+              <h4>തുറന്ന ചോദ്യങ്ങൾ ചോദിക്കുക</h4>
+              <p style="font-size: 0.95rem; margin: 0;">'മോൻ ഇന്ന് ഹാപ്പിയായിരുന്നോ' എന്നതിന് പകരം 'ഇന്ന് സ്കൂളിൽ ഏറ്റവും രസകരമായ കാര്യം എന്തായിരുന്നു' എന്ന് ചോദിക്കുക.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%; background: rgba(234, 179, 8, 0.03);">
+        <h3 class="accent-txt-marigold">ശ്രദ്ധയോടെ കേൾക്കൽ</h3>
+        <span class="subtitle-eng">Undivided Attention</span>
+        <p style="font-size: 1.15rem; line-height: 1.85;">
+          കുട്ടികൾ സംസാരിക്കുമ്പോൾ നമ്മൾ പകുതി ശ്രദ്ധ മൊബൈലിൽ നൽകി സംസാരിച്ചാൽ അവർ നമ്മളിൽ നിന്നും ഉൾവലിയാൻ സാധ്യതയുണ്ട്. ദിവസവും 15 മിനിറ്റെങ്കിലും മൊബൈലില്ലാതെ അവരുടെ കാര്യങ്ങൾ മാത്രം ചോദിച്ചറിയാൻ നീക്കിവെക്കുക.
+        </p>
+        <p class="sub-english">
+          If a parent is constantly distracted by their phone while listening, the child feels undervalued. Dedicate at least 15 minutes of uninterrupted conversation time daily.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 14: Digital Parenting (Hour 4) -->
+    <section class="slide slide-grid-2" id="slide-14" data-hour="4">
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <span class="badge badge-mint">Hour 4: ഡിജിറ്റൽ പേരന്റിംഗ്</span>
+        <h2>ഡിജിറ്റൽ യുഗത്തിലെ പേരന്റിംഗ്</h2>
+        <span class="subtitle-eng">Screen Time Rules & Balances</span>
+        <p>കുട്ടികളുടെ ശാരീരിക-മാനസിക വളർച്ചയ്ക്ക് ആവശ്യമായ ആരോഗ്യകരമായ സമയം വിഭജിക്കുന്ന ഡോനട്ട് ചാർട്ട് താഴെ കാണാം.</p>
+        
+        <div class="chart-container">
+          <div class="donut-svg-wrapper">
+            <svg class="donut-svg" viewBox="0 0 100 100">
+              <circle class="donut-segment" cx="50" cy="50" r="35" stroke="var(--border-color)" stroke-dasharray="100 0"></circle>
+              <!-- 50% Active Play (Mint) -->
+              <circle class="donut-segment" cx="50" cy="50" r="35" stroke="var(--mint)" stroke-dasharray="50 50" stroke-dashoffset="0" data-pct="50" data-desc="ഓപ്പൺ കളി / വ്യായാമം (Active Outdoor/Free Play)"></circle>
+              <!-- 20% Creative Learn (Marigold) -->
+              <circle class="donut-segment" cx="50" cy="50" r="35" stroke="var(--marigold)" stroke-dasharray="20 80" stroke-dashoffset="-50" data-pct="20" data-desc="ക്രിയേറ്റീവ് ലേണിംഗ് (Educational Screen Time)"></circle>
+              <!-- 30% Family/Sleep (Coral) -->
+              <circle class="donut-segment" cx="50" cy="50" r="35" stroke="var(--coral)" stroke-dasharray="30 70" stroke-dashoffset="-70" data-pct="30" data-desc="കുടുംബ സമയം & ഉറക്കം (Family Time & Rest)"></circle>
+            </svg>
+            <div class="donut-center-text">
+              <span class="donut-center-num" id="donut-num">50%</span>
+              <span class="donut-center-lbl" id="donut-lbl">Active Play</span>
+            </div>
+          </div>
+          
+          <div class="chart-legend">
+            <div class="chart-legend-item highlighted" data-segment="0">
+              <span class="chart-legend-dot" style="background: var(--mint);"></span>
+              <span>കളികൾ (50%)</span>
+            </div>
+            <div class="chart-legend-item" data-segment="1">
+              <span class="chart-legend-dot" style="background: var(--marigold);"></span>
+              <span>ലേണിംഗ് (20%)</span>
+            </div>
+            <div class="chart-legend-item" data-segment="2">
+              <span class="chart-legend-dot" style="background: var(--coral);"></span>
+              <span>കുടുംബ സമയം (30%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <h3 class="accent-txt-mint" id="chart-detail-title">ഓപ്പൺ കളി / വ്യായാമം</h3>
+        <span class="subtitle-eng" id="chart-detail-eng">Active Play & Exercise</span>
+        <p id="chart-detail-desc" style="font-size: 1.15rem; line-height: 1.85;">
+          ഫോണുകളും ടിവികളും പൂർണ്ണമായി ഒഴിവാക്കി പുറത്തു പോയി ഓടി കളിക്കാനും മറ്റുള്ള കുട്ടികളുമായി ഇടപഴകാനും ഉള്ള സമയം. ഇത് അവരുടെ സാമൂഹിക വളർച്ചയെ സഹായിക്കുന്നു.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 15: Weekly Checklist & Closing (Hour 4) -->
+    <section class="slide" id="slide-15" data-hour="4">
+      <div class="glass-card" style="width: 100%;">
+        <span class="badge badge-mint">Hour 4: ഡിജിറ്റൽ പേരന്റിംഗ്</span>
+        <h2>പ്രതിവാര പാരന്റിംഗ് ചെക്ക്ലിസ്റ്റ്</h2>
+        <span class="subtitle-eng">Weekly Parenting Checklist & Habits</span>
+        <p style="margin-bottom: 25px;">ദിനചര്യകളിൽ ചില നല്ല ശീലങ്ങൾ വളർത്തിയെടുക്കുന്നത് സന്തോഷകരമായ ഒരു കുടുംബ പശ്ചാത്തലം ഒരുക്കാൻ സഹായിക്കും.</p>
+        
+        <div class="checklist-table-wrapper">
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th class="checkbox-col">✓</th>
+                <th>പ്രവർത്തി (Action Item)</th>
+                <th>ലക്ഷ്യം (Goal)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>പ്രത്യേക സമയം (One-on-One time)</td>
+                <td>ആഴ്ചയിൽ ഒരിക്കൽ കുട്ടിക്ക് മാത്രമായി സമയം നൽകുക.</td>
+              </tr>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>സ്ക്രീൻ ഫ്രീ ഫാമിലി ഡിന്നർ</td>
+                <td>ഫോണുകൾ പൂർണ്ണമായി മാറ്റിവെച്ചു ഒരുമിച്ച് ഭക്ഷണം കഴിക്കുക.</td>
+              </tr>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>അഭിനന്ദനങ്ങൾ നൽകുക</td>
+                <td>ആഴ്ചയിൽ 3 തവണയെങ്കിലും അവരെ നല്ല പ്രവർത്തികൾക്ക് പുകഴ്ത്തുക.</td>
+              </tr>
+              <tr>
+                <td class="checkbox-col"><div class="custom-checkbox"></div></td>
+                <td>പ്രതിവാര ഫാമിലി മീറ്റിംഗ്</td>
+                <td>കുട്ടികളുടെ ആവശ്യങ്ങളും സന്തോഷങ്ങളും ചോദിച്ചറിയുക.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Navigation Buttons & Slide Progress -->
+  <footer>
+    <div class="help-tips">
+      നാവിഗേറ്റ് ചെയ്യാൻ കീബോർഡിലെ <span class="keyboard-key">&larr;</span> <span class="keyboard-key">&rarr;</span> അല്ലെങ്കിൽ <span class="keyboard-key">Space</span> ഉപയോഗിക്കുക
+    </div>
+    
+    <a href="../index.html" class="nav-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-family: var(--font-title); font-weight: 600; width: auto; padding: 0 15px; border-radius: 20px;">ഹോം (Home)</a>
+    
+    <div class="nav-buttons">
+      <button class="nav-btn" id="prev-btn" disabled>&larr;</button>
+      <div class="slide-number">
+        <span id="current-slide-num">1</span> / <span id="total-slides-num">15</span>
+      </div>
+      <button class="nav-btn" id="next-btn">&rarr;</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
