@@ -196,14 +196,15 @@ document.addEventListener('DOMContentLoaded', () => {
     chartSegments.forEach(segment => {
       const percentage = parseFloat(segment.getAttribute('data-pct'));
       const circumference = 238.76;
-      const strokeDashoffset = circumference - (percentage / 100) * circumference;
+      const dashLength = (percentage / 100) * circumference;
       
       // First reset
-      segment.style.strokeDashoffset = circumference;
+      segment.style.strokeDasharray = `0 ${circumference}`;
       
-      // Delay slightly for render transition
+      // Delay slightly for transition
       setTimeout(() => {
-        segment.style.strokeDashoffset = strokeDashoffset;
+        segment.style.transition = 'stroke-dasharray 1.2s ease-out, stroke-width 0.3s';
+        segment.style.strokeDasharray = `${dashLength} ${circumference}`;
       }, 100);
     });
   }
